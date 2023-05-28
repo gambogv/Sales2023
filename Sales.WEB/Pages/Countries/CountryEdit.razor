@@ -11,7 +11,7 @@
 }
 else
 {
-    <CountryForm @ref="countryForm" Country="country" OnValidSubmit="Edit" ReturnAction="Return" />
+    <CountryForm @ref="countryForm" Country="country" OnValidSubmit="EditAsync" ReturnAction="Return" />
 }
 
 @code {
@@ -43,7 +43,7 @@ else
         }
     }
 
-    private async Task Edit()
+    private async Task EditAsync()
     {
         var responseHTTP = await repository.Put("api/countries", country);
 
